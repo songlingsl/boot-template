@@ -85,13 +85,13 @@ token:
     expireTime: 30
   
 # MyBatis配置
-mybatis:
-    # 搜索指定包别名
-    typeAliasesPackage: com.ruoyi.project.**.domain
-    # 配置mapper的扫描，找到所有的mapper.xml映射文件
-    mapperLocations: classpath*:mybatis/**/*Mapper.xml
-    # 加载全局的配置文件
-    configLocation: classpath:mybatis/mybatis-config.xml
+#mybatis:
+#    # 搜索指定包别名
+#    typeAliasesPackage: com.ruoyi.project.**.domain
+#    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+#    mapperLocations: classpath*:mybatis/**/*Mapper.xml
+#    # 加载全局的配置文件
+#    configLocation: classpath:mybatis/mybatis-config.xml
 
 # PageHelper分页插件
 pagehelper: 
@@ -129,9 +129,12 @@ gen:
 
 
 mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 搜索指定包别名
+  typeAliasesPackage: com.ruoyi.project.**.domain
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mybatis/**/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis/mybatis-config.xml
   global-config:
     db-config:
       id-type: assign_id #自3.3.0开始,entity的id默认使用雪花算法+UUID
