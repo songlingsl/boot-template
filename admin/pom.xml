@@ -97,11 +97,11 @@
 		</dependency>
 
 		<!-- SpringBoot集成mybatis框架 -->
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${mybatis.spring.boot.starter.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.mybatis.spring.boot</groupId>-->
+<!--			<artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--			<version>${mybatis.spring.boot.starter.version}</version>-->
+<!--		</dependency>-->
 		
 		<!-- pagehelper 分页插件 -->
 		<dependency>
@@ -244,6 +244,12 @@
 			</exclusions>
 		</dependency>
 
+<!--替换原来的mybatis-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>3.3.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
