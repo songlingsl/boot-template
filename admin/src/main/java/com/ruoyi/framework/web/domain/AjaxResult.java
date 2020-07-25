@@ -1,8 +1,11 @@
 package com.ruoyi.framework.web.domain;
 
-import java.util.HashMap;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ruoyi.common.constant.HttpStatus;
 import com.ruoyi.common.utils.StringUtils;
+import com.ruoyi.framework.web.page.TableDataInfo;
+
+import java.util.HashMap;
 
 /**
  * 操作消息提醒
@@ -145,4 +148,15 @@ public class AjaxResult extends HashMap<String, Object>
     {
         return new AjaxResult(code, msg, null);
     }
+
+    public static TableDataInfo toDataTable(Page page)
+    {
+        TableDataInfo rspData = new TableDataInfo();
+        rspData.setCode(HttpStatus.SUCCESS);
+        rspData.setMsg("查询成功");
+        rspData.setRows(page.getRecords());
+        rspData.setTotal(page.getTotal());
+        return rspData;
+    }
+
 }
